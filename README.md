@@ -1,5 +1,7 @@
 # Algorithms Task
 
+FCAI-HU CS316 Algorithms task
+
 Source Code: 
 1. wiggle1.py: wiggle sort function based on merge sort & interleaving two subarrays 
 2. wiggle2.py: wiggle sort function based on a max heap & infix order
