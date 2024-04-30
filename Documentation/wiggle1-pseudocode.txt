@@ -1,0 +1,57 @@
+MergeSort(arr, l, m r)
+    n1 <- m - l + 1
+    n2 <- r - m
+
+    L <- array of length n1 
+    R <- array of length n2
+
+    for i <- 0 to n1 do
+        L[i] <- arr[l + i]
+    
+    for j <- 0 to n2 do 
+        R[j] <- arr[m + 1 + j]
+
+    i <- 0 
+    j <- 0
+    k = l
+
+    while i < n1 and j < n2 do
+        if L[i] <= R[j] then
+            arr[k] <- L[i]
+            i <- i + 1
+        else
+            arr[k] <- R[j]
+            j <- j + 1
+        k <- k + 1
+
+    while i < n1 do
+        arr[k] <- L[i]
+        i <- i + 1
+        k <- k + 1
+
+MergeSortDiv(arr, l, r)
+    if l < r do
+        m <- l + (r-l) // 2
+        MergeSortDiv(arr, l, m)
+        MergeSortDiv(arr, m+1, r)
+        MergeSort(arr, l, m, r)
+
+MergeSort(arr)
+    MergeSortDiv(arr, 0, length of arr-1)
+
+--------------
+
+numbers <- array of numbers inputted by user
+MergeSort(numbers)
+half_len <- ⌊length of numbers/2⌋
+first_half <- numbers[0 to half_len]
+second_half <- numbers[half_len to length of numbers]
+
+arr <- []
+for i <- 0 to half_len do
+    append first_half[i] to arr
+    append second_half[length(second_half)-(i+1)] to arr
+if length of second_half > half_len then
+    append second_half[0] to arr
+
+output arr

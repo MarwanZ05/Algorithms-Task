@@ -1,0 +1,17 @@
+Merge Sort: 
+T(n) = 2T(n/2) + Θ(n)
+Θ(nlgn)
+
+Wiggle Sort 1: 
+T(n) = 2T(n/2) + 2Θ(n)
+Θ(nlgn)
+
+Max Heap: 
+O(n)
+
+Wiggle Sort 2: 
+T(n) = 2T(n/2) + Θ(1) + O(n)
+O(n)
+
+Therefore, the second wiggle sort algorithm, based on a max heap, is more time-efficient than the first algorithm.
+[O(n) is better than Θ(nlgn)] 

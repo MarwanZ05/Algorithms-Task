@@ -1,0 +1,47 @@
+Heapify(arr, n, i)
+    largest <- i
+    l <- 2 * i + 1
+    r <- 2 * i + 2
+
+    if l < n and arr[i] < arr[l] then 
+        largest = l 
+    
+    if r < n and arr[largest] < arr[r] then
+        largest = r 
+    
+    if largest != i then
+        swap arr[i] with arr[largest]
+    Heapify(arr, n, largest)
+
+MaxHeap(arr):
+    n = length of arr
+    for i <- ⌊n/2⌋ down to -1
+        Heapify(arr, n, i)
+
+HeapLeft(i)
+    return 2 * i + 1
+
+HeapRight(i)
+    return 2 * i + 2
+
+CopyInfix(arr, i, target)
+    if i >= len(arr) then
+        return
+    CopyInfix(arr, HeapLeft(i), target)
+    append arr[i] to target
+    CopyInfix(arr, HeapRight(i), target)
+-----------------------------
+numbers <- array of numbers inputted by user
+max_num = -1 
+
+if len(numbers) % 2 = 0 then
+    max_num = max(numbers)
+    remove max_num from numbers
+MaxHeap(numbers)
+arr <- empty array
+
+CopyInfix(numbers, 0, arr)
+if max_num > -1 then 
+    append max_num to arr
+
+output arr
